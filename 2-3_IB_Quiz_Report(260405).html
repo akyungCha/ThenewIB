@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1" />
+    <title>IB Battle</title>
+    <link rel="stylesheet" href="resource/css/reset.css" />
+    <link rel="stylesheet" href="resource/css/style.css" />
+    <link rel="stylesheet" href="resource/css/style_new.css">
+    <link rel="stylesheet" href="resource/css/style.ak3.css" />
+  </head>
+
+  <body>
+
+    <!-- 헤더: 브레드크럼 -->
+    <div class="qr-header">
+      <div class="quiz-breadcrumb">My class &gt; <strong>Quiz Report</strong></div>
+    </div>
+
+    <!-- 메인 레이아웃 -->
+    <div class="qr-layout">
+
+      <!-- 왼쪽: 결과 카드 목록 -->
+      <div class="qr-left">
+
+        <!-- 뷰포트: 5개 카드 고정 높이(436px), overflow hidden -->
+        <!-- 내부 세로 스와이프로만 나머지 카드 확인 -->
+        <div class="qr-card-viewport" id="qrViewport">
+          <div class="qr-card-list" id="qrCardList">
+            <!-- JS renderReportCards()로 생성 -->
+          </div>
+        </div>
+
+        <!-- 현재 페이지 점 표시 -->
+        <div class="qr-page-dots" id="qrPageDots"></div>
+
+        <!-- 스와이프 힌트: 다음 세트가 있을 때만 표시 -->
+        <div class="qr-swipe-hint" id="qrSwipeHint">
+          <span class="qr-hint-arrow">↓</span>
+          <span>다음 페이지</span>
+        </div>
+
+      </div>
+      <!-- 왼쪽: 결과 카드 목록 -->
+
+      <div class="qr-divider"></div>
+
+      <!-- 오른쪽: 원형 프로그레스바 -->
+      <div class="qr-right" id="qrPerfBox">
+
+        <!-- 원형 래퍼: 두 상태를 같은 자리에 겹침 -->
+        <div class="qr-circle-stack">
+
+          <!-- 결과 원형 (80% 미만 — fail 뱃지) -->
+          <div class="ak_circle_wrap qr-circle-incomplete" id="qrCircleIncomplete">
+            <svg class="ak_circle_svg" viewBox="0 0 100 100">
+              <defs>
+                <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="#1e2a78" />
+                  <stop offset="50%"  stop-color="#1f6f8b" />
+                  <stop offset="100%" stop-color="#2aa6a4" />
+                </linearGradient>
+              </defs>
+              <circle class="ak_circle_outer_ring" cx="50" cy="50" r="47"/>
+              <circle class="ak_circle_inner_disc" cx="50" cy="50" r="34"/>
+              <circle class="ak_circle_track"      cx="50" cy="50" r="40"/>
+              <circle class="ak_circle_fill" id="qrCircleFill" cx="50" cy="50" r="40" stroke="url(#circleGradient)"/>
+            </svg>
+            <span class="ak_circle_label" id="qrCircleLabel">0%</span>
+            <img src="resource/imgs_new/fail.svg" alt="미달" class="ak_circle_badge" />
+          </div>
+
+          <!-- 완료 원형 (80% 이상 — passed 뱃지) -->
+          <div class="ak_circle_wrap qr-circle-complete" id="qrCircleComplete">
+            <svg class="ak_circle_svg" viewBox="0 0 100 100">
+              <circle class="ak_circle_outer_ring ak_circle_outer_ring--done" cx="50" cy="50" r="47"/>
+              <circle class="ak_circle_inner_disc" cx="50" cy="50" r="34"/>
+              <circle class="ak_circle_track"      cx="50" cy="50" r="40"/>
+              <circle class="ak_circle_fill--done" cx="50" cy="50" r="40"/>
+            </svg>
+            <img src="resource/imgs_new/check.png" alt="완료" class="ak_circle_check" />
+            <img src="resource/imgs_new/passed.svg" alt="통과" class="ak_circle_badge" />
+          </div>
+
+        </div>
+
+        <!-- 퀴즈 결과 및 안내 문구 -->
+        <p class="qr-stats" id="qrStats"></p>
+        <p class="qr-msg"   id="qrMsg"></p>
+        <button class="qr-retry-btn">퀴즈 다시 도전하기</button>
+
+      </div>
+      
+
+    </div>
+
+
+    <script src="resource/js/common3.js"></script>
+  </body>
+</html>

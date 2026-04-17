@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1" />
+    <title>IB Battle</title>
+    <link rel="stylesheet" href="resource/css/reset.css" />
+    <link rel="stylesheet" href="resource/css/style.css" />
+    <link rel="stylesheet" href="resource/css/style.ak3.css" />
+  </head>
+
+  <body>
+
+    <!-- 진행 바 -->
+    <div class="quiz-progress" id="quizProgress"></div>
+
+    <!-- 헤더 문제 번호 -->
+    <div class="quiz-header">
+      <div class="quiz-breadcrumb">My class &gt; <strong>IB Quiz</strong></div>
+      <div class="quiz-counter">
+        <strong id="currentQNum">1</strong> / <span id="totalQNum">5</span>
+      </div>
+    </div>
+
+    <!-- 본문 라벨 / 문제 / 보기 카드 -->
+    <div class="quiz-body">
+      <div class="quiz-label">IB Quiz</div>
+      <div class="quiz-question" id="quizQuestion"></div>
+      <div class="quiz-choices" id="quizChoices"></div>
+    </div>
+
+    <script src="resource/js/common3.js"></script>
+  </body>
+</html>

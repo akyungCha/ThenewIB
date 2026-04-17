@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1" />
+    <title>IB Battle</title>
+    <link rel="stylesheet" href="resource/css/reset.css" />
+    <link rel="stylesheet" href="resource/css/style.css" />
+    <link rel="stylesheet" href="resource/css/style.ak.css" />
+    <link rel="stylesheet" href="resource/css/style.ak4.css" />
+  </head>
+
+  <body>
+    <div class="main">
+
+      <!-- 햄버거 버튼 -->
+      <div class="ak_topbar">
+        <button class="ak_hamburger" id="ak_hamburger" aria-label="메뉴 열기/닫기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- 백드롭 -->
+      <div class="ak_backdrop" id="ak_backdrop"></div>
+
+      <!-- 좌측 네비 -->
+      <div class="nav" id="ak_nav">
+        <div class="logo">
+          <img src="resource/imgs/IB_logo.png" alt="IB writing battle" />
+        </div>
+        <ul>
+          <li class="depth1 class on">
+            <a href="#"><span></span>My Class</a>
+          </li>
+          <li class="depth1 portfolio">
+            <a href="#"><span></span>My portfolio</a>
+            <ul class="depth2">
+              <li><a href="#">Revise</a></li>
+              <li><a href="#">My IB Report</a></li>
+              <li><a href="#">Writing Contest</a></li>
+              <li><a href="#">UCC Contest</a></li>
+              <li><a href="#">UCC Video Star</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /좌측 네비 -->
+
+      <div class="learning_content">
+        <div class="ak_box_wrap">
+
+          <!-- 왼쪽 영역 (50%) -->
+          <div class="ak4_left">
+
+            <!-- 1. 질문 박스 -->
+            <div class="ak4_question_box">
+              <p class="ak4_question_text">
+                21세기의 세계 리더십은 어떤 모습이어야 하는지 쓰고, 힘 중심 리더십과 지혜로운 리더십을 비교하여 자신의 의견과 그 이유를 설명하시오.
+              </p>
+              <div class="ak4_chips">
+                <span class="ak4_chip">120단어 이상사용했는가?</span>
+                <span class="ak4_chip">비교 / 대조문을 사용했는가?</span>
+                <span class="ak4_chip">이유 2개 이상 작성했는가?</span>
+                <span class="ak4_chip">연결어 2가지 이상 사용 했는가?</span>
+                <span class="ak4_chip">서론 / 본론 / 결론으로 나눠서 글을 작성했는가?</span>
+              </div>
+            </div>
+
+            <!-- 2. IB Writing 에디터 박스 -->
+            <div class="ak4_editor_box">
+
+              <!-- 헤더 바 -->
+              <div class="ak4_editor_header">
+                <div class="ak4_editor_header_left">
+                  <img src="resource/imgs_new/camera.svg"  alt="camera"   class="ak4_header_icon" />
+                  <img src="resource/imgs_new/file.svg"  alt="file"    class="ak4_header_icon" />
+                </div>
+                <div class="ak4_editor_header_center">
+                  <img src="resource/imgs_new/pencil.svg"  alt="pencil"   class="ak4_header_icon ak4_header_icon--pencil" />
+                  <span>IB Writing</span>
+                </div>
+                <div class="ak4_editor_header_right">
+                  <img src="resource/imgs_new/download.svg" alt="download" class="ak4_header_icon" />
+                </div>
+              </div>
+
+              <!-- 글쓰기 영역 -->
+              <textarea class="ak4_editor_textarea" id="ak4WritingArea" placeholder="글쓰기를 시작하세요."></textarea>
+
+              <!-- 하단 바 -->
+              <div class="ak4_editor_footer">
+                <button class="ak4_submit_btn">자동 첨삭</button>
+                <span class="ak4_word_count" id="ak4WordCount">Word Count: 0</span>
+              </div>
+
+            </div>
+            <!-- /IB Writing 에디터 박스 -->
+
+          </div>
+          <!-- /왼쪽 영역 -->
+
+          <!-- 오른쪽 영역 (나머지 50%) -->
+          <div class="ak4_right">
+
+            <!-- Voice Dictionary 박스 -->
+            <div class="ak4_vd_box">
+
+              <!-- 왼쪽: 마이크 아이콘 + 레이블 -->
+              <div class="ak4_vd_icon_wrap">
+                <img src="resource/imgs_new/mic_black.svg" alt="mic" class="ak4_vd_icon" />
+                <span class="ak4_vd_label">Voice </br> Dictionary</span>
+              </div>
+
+              <!-- 오른쪽: 입력 + 출력 -->
+              <div class="ak4_vd_content">
+
+                <div class="ak4_vd_fields">
+
+                <!-- 입력 필드 -->
+                <div class="ak4_vd_input_wrap">
+                  <img src="resource/imgs_new/english.png" alt="english" class="ak4_vd_lang_icon" id="ak4VdLangIcon" style="cursor:pointer;" />
+                  <input type="text" class="ak4_vd_input" id="ak4VdInput" placeholder="단어나 문장을 번역해보세요" />
+                  <div class="ak4_vd_waveform" id="ak4VdWaveform">
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                    <span class="ak4_wave_bar"></span>
+                  </div>
+                  <img src="resource/imgs_new/mic.svg" alt="mic" class="ak4_vd_mic_icon" id="ak4VdMicIcon" />
+                  <img src="resource/imgs_new/arrow_circle_up.svg" alt="arrow_circle_up" class="ak4_vd_send_btn" id="ak4VdSendBtn" />
+                </div>
+
+                <!-- 번역 출력 영역 -->
+                <div class="ak4_vd_output" id="ak4VdOutput"></div>
+
+                </div><!-- /ak4_vd_fields -->
+              </div>
+            </div>
+            <!-- /Voice Dictionary 박스 -->
+
+            <!-- 탭 컨텐츠 박스 -->
+            <div class="ak4_tab_box">
+              <div class="ak4_tab_header">
+                <button class="ak4_tab_btn ak4_tab_btn--active" data-tab="guided">Guided Writing</button>
+                <button class="ak4_tab_btn" data-tab="checklist">첨삭 내용</button>
+              </div>
+              <div class="ak4_tab_content">
+                <div class="ak4_tab_pane ak4_tab_pane--active" id="ak4Tab_guided"></div>
+                <div class="ak4_tab_pane" id="ak4Tab_checklist"></div>
+              </div>
+            </div>
+            <!-- /탭 컨텐츠 박스 -->
+
+          </div>
+          <!-- /오른쪽 영역 -->
+
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="resource/js/common.js"></script>
+    <script src="resource/js/common4.js"></script>
+  </body>
+</html>

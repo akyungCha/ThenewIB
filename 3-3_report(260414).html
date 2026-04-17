@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1" />
+    <title>IB Battle</title>
+    <link rel="stylesheet" href="resource/css/reset.css" />
+    <link rel="stylesheet" href="resource/css/style.css" />
+    <link rel="stylesheet" href="resource/css/style.ak.css" />
+    <link rel="stylesheet" href="resource/css/style.ak5.css" />
+  </head>
+
+  <body>
+    <div class="main">
+
+      <!-- 햄버거 버튼 -->
+      <div class="ak_topbar">
+        <button class="ak_hamburger" id="ak_hamburger" aria-label="메뉴 열기/닫기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- 백드롭 -->
+      <div class="ak_backdrop" id="ak_backdrop"></div>
+
+      <!-- 좌측 네비 -->
+      <div class="nav" id="ak_nav">
+        <div class="logo">
+          <img src="resource/imgs/IB_logo.png" alt="IB writing battle" />
+        </div>
+        <ul>
+          <li class="depth1 class">
+            <a href="#"><span></span>My Class</a>
+          </li>
+          <li class="depth1 portfolio on">
+            <a href="#"><span></span>My portfolio</a>
+            <ul class="depth2">
+              <li><a href="#">Revise</a></li>
+              <li class="on"><a href="#">My IB Report</a></li>
+              <li><a href="#">Writing Contest</a></li>
+              <li><a href="#">UCC Contest</a></li>
+              <li><a href="#">UCC Video Star</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /좌측 네비 -->
+
+      <!-- 콘텐츠 배경 래퍼 -->
+      <div class="learning_content">
+
+        <!-- 페이지 전체 래퍼 -->
+        <div class="ak5_page">
+
+          <!-- 상단 인덱스 탭: IB Report / My Report -->
+          <div class="ak5_index_tabs" id="ak5IndexTabs">
+            <button class="ak5_index_btn ak5_index_btn--active" data-view="ib">IB Writing Report</button>
+            <button class="ak5_index_btn" data-view="my">My Writing Report</button>
+          </div>
+
+          <!-- ───────────────────────────────────
+               IB Report 
+          ─────────────────────────────────── -->
+          <div class="ak5_view ak5_view--active" id="ak5View_ib">
+
+            <!-- 두 컬럼 레이아웃 (왼쪽 70% / 오른쪽 30%) -->
+            <div class="ak5_two_col">
+
+              <!-- 왼쪽 영역 (70%): 2×2 리포트 카드 그리드 -->
+              <div class="ak5_col_left">
+                <div class="ak5_card_grid">
+
+                  <!-- ── 리포트 카드 1: 생활과 윤리 ── -->
+                  <div class="ak5_report_card">
+                    <!-- 상단: 날짜 / 과제명 / 과목 칩 -->
+                    <div class="ak5_card_top">
+                      <p class="ak5_card_date">2026-02-06</p>
+                      <h3 class="ak5_card_title">내가 좋아하는 야외활동은 무엇인가</h3>
+                      <span class="ak5_card_chip ak5_chip--teal">생활과 윤리</span>
+                    </div>
+                    <!-- 점수 행 -->
+                    <div class="ak5_card_score_row">
+                      <span class="ak5_card_score_label">점수</span>
+                      <div class="ak5_card_score_right">
+                        <span class="ak5_card_score_value">0점</span>
+                      </div>
+                    </div>
+                    <!-- 하단: TOEFL 정보 + CTA 버튼 -->
+                    <div class="ak5_card_bottom">
+                      <p class="ak5_card_toefl"><span class="ak5_toefl_label">TOEFL</span> 650&nbsp;&nbsp;<span class="ak5_toefl_label">CEFR</span> A2-B1</p>
+                      <div class="ak5_card_cta_row">
+                        <button class="ak5_cta_btn" data-type="ucc" aria-label="UCC 영상 보기">
+                          <img src="resource/imgs_new/UCC.png" alt="UCC 영상" class="ak5_cta_icon" />
+                          <span>UCC 영상</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback1" aria-label="1차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback1.png" alt="1차 첨삭" class="ak5_cta_icon" />
+                          <span>1차 첨삭</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback2" aria-label="2차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback2.png" alt="2차 첨삭" class="ak5_cta_icon" />
+                          <span>2차 첨삭</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /리포트 카드 1 -->
+
+                  <!-- ── 리포트 카드 2: 사회 ── -->
+                  <div class="ak5_report_card">
+                    <!-- 상단: 날짜 / 과제명 / 과목 칩 -->
+                    <div class="ak5_card_top">
+                      <p class="ak5_card_date">2026-03-07</p>
+                      <h3 class="ak5_card_title">만약 내가 달의 땅을 산다면 무엇을 할까</h3>
+                      <span class="ak5_card_chip ak5_chip--blue">사회 (Social Studies)</span>
+                    </div>
+                    <!-- 점수 행 — 100점: Amazing 배지 -->
+                    <div class="ak5_card_score_row">
+                      <!-- Amazing 배지: 점수 행 상단 우측에 절대 배치 -->
+                      <img src="resource/imgs_new/amazing.png" alt="Amazing" class="ak5_score_img_badge" />
+                      <span class="ak5_card_score_label">점수</span>
+                      <div class="ak5_card_score_right">
+                        <span class="ak5_card_score_value">100점</span>
+                      </div>
+                    </div>
+                    <!-- 하단: TOEFL 정보 + CTA 버튼 -->
+                    <div class="ak5_card_bottom">
+                      <p class="ak5_card_toefl"><span class="ak5_toefl_label">TOEFL</span> 700&nbsp;&nbsp;<span class="ak5_toefl_label">CEFR</span> A2</p>
+                      <div class="ak5_card_cta_row">
+                        <button class="ak5_cta_btn" data-type="ucc" aria-label="UCC 영상 보기">
+                          <img src="resource/imgs_new/UCC.png" alt="UCC 영상" class="ak5_cta_icon" />
+                          <span>UCC 영상</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback1" aria-label="1차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback1.png" alt="1차 첨삭" class="ak5_cta_icon" />
+                          <span>1차 첨삭</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback2" aria-label="2차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback2.png" alt="2차 첨삭" class="ak5_cta_icon" />
+                          <span>2차 첨삭</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /리포트 카드 2 -->
+
+                  <!-- ── 리포트 카드 3: 한국사 ── -->
+                  <div class="ak5_report_card">
+                    <!-- 상단: 날짜 / 과제명 / 과목 칩 -->
+                    <div class="ak5_card_top">
+                      <p class="ak5_card_date">2026-03-15</p>
+                      <h3 class="ak5_card_title">미래의 나에게 편지를 쓴다면 어떻게 쓸까</h3>
+                      <span class="ak5_card_chip ak5_chip--gray">한국사</span>
+                    </div>
+                    <!-- 점수 행 — 85점: Good Job 배지 -->
+                    <div class="ak5_card_score_row">
+                      <!-- Good Job 배지: 점수 행 상단 우측에 절대 배치 -->
+                      <img src="resource/imgs_new/good job.png" alt="Good Job" class="ak5_score_img_badge" />
+                      <span class="ak5_card_score_label">점수</span>
+                      <div class="ak5_card_score_right">
+                        <span class="ak5_card_score_value">85점</span>
+                      </div>
+                    </div>
+                    <!-- 하단: TOEFL 정보 + CTA 버튼 -->
+                    <div class="ak5_card_bottom">
+                      <p class="ak5_card_toefl"><span class="ak5_toefl_label">TOEFL</span> 680&nbsp;&nbsp;<span class="ak5_toefl_label">CEFR</span> B1</p>
+                      <div class="ak5_card_cta_row">
+                        <button class="ak5_cta_btn" data-type="ucc" aria-label="UCC 영상 보기">
+                          <img src="resource/imgs_new/UCC.png" alt="UCC 영상" class="ak5_cta_icon" />
+                          <span>UCC 영상</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback1" aria-label="1차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback1.png" alt="1차 첨삭" class="ak5_cta_icon" />
+                          <span>1차 첨삭</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback2" aria-label="2차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback2.png" alt="2차 첨삭" class="ak5_cta_icon" />
+                          <span>2차 첨삭</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /리포트 카드 3 -->
+
+                  <!-- ── 리포트 카드 4: 윤리와 사상 ── -->
+                  <div class="ak5_report_card">
+                    <!-- 상단: 날짜 / 과제명 / 과목 칩 -->
+                    <div class="ak5_card_top">
+                      <p class="ak5_card_date">2026-03-22</p>
+                      <h3 class="ak5_card_title">환경 문제 해결을 위해 내가 할 수 있는 일은 무엇인가</h3>
+                      <span class="ak5_card_chip ak5_chip--orange">윤리와 사상</span>
+                    </div>
+                    <!-- 점수 행 -->
+                    <div class="ak5_card_score_row">
+                      <span class="ak5_card_score_label">점수</span>
+                      <div class="ak5_card_score_right">
+                        <span class="ak5_card_score_value">72점</span>
+                      </div>
+                    </div>
+                    <!-- 하단: TOEFL 정보 + CTA 버튼 -->
+                    <div class="ak5_card_bottom">
+                      <p class="ak5_card_toefl"><span class="ak5_toefl_label">TOEFL</span> 660&nbsp;&nbsp;<span class="ak5_toefl_label">CEFR</span> A2</p>
+                      <div class="ak5_card_cta_row">
+                        <button class="ak5_cta_btn" data-type="ucc" aria-label="UCC 영상 보기">
+                          <img src="resource/imgs_new/UCC.png" alt="UCC 영상" class="ak5_cta_icon" />
+                          <span>UCC 영상</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback1" aria-label="1차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback1.png" alt="1차 첨삭" class="ak5_cta_icon" />
+                          <span>1차 첨삭</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback2" aria-label="2차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback2.png" alt="2차 첨삭" class="ak5_cta_icon" />
+                          <span>2차 첨삭</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /리포트 카드 4 -->
+
+                </div>
+              </div>
+              <!-- /왼쪽 영역 -->
+
+              <!-- 오른쪽 영역 (30%): 과목별 평균 점수 카드 -->
+              <div class="ak5_col_right">
+                <div class="ak5_score_card">
+
+                  <!-- 카드 제목 -->
+                  <p class="ak5_score_card_title">과목별 평균 점수</p>
+
+                  <!-- 도넛형 원형 차트 (플레이스홀더 데이터) -->
+                  <div class="ak5_donut_wrap">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="과목별 평균 점수 도넛 차트">
+
+                      <!-- 배경 트랙 원 -->
+                      <circle cx="100" cy="100" r="70"
+                        fill="none" stroke="#f0f0f0" stroke-width="16"/>
+
+                      <!-- 사회 세그먼트 (연파랑) — 100점 기준 플레이스홀더 -->
+                      <circle cx="100" cy="100" r="70"
+                        fill="none" stroke="#4ec3e0" stroke-width="16"
+                        stroke-dasharray="170 440" stroke-linecap="butt"
+                        transform="rotate(-90, 100, 100)"/>
+
+                      <!-- 한국사 세그먼트 (진파랑) — 85점 기준 플레이스홀더 -->
+                      <circle cx="100" cy="100" r="70"
+                        fill="none" stroke="#0321ff" stroke-width="16"
+                        stroke-dasharray="144 440" stroke-linecap="butt"
+                        transform="rotate(50, 100, 100)"/>
+
+                      <!-- 윤리와 사상 세그먼트 (주황) — 72점 기준 플레이스홀더 -->
+                      <circle cx="100" cy="100" r="70"
+                        fill="none" stroke="#ff8c42" stroke-width="16"
+                        stroke-dasharray="122 440" stroke-linecap="butt"
+                        transform="rotate(168, 100, 100)"/>
+
+                      <!-- 생활과 윤리 세그먼트 (초록) — 0점, 표시 없음 -->
+
+                      <!-- 중앙 평균 점수  -->
+                      <text x="100" y="108"
+                        text-anchor="middle"
+                        font-size="30" font-weight="800"
+                        fill="#1a1a2e" font-family="sans-serif">64점</text>
+                      <text x="100" y="125"
+                        text-anchor="middle"
+                        font-size="12" fill="#888888" font-weight="500"
+                        font-family="sans-serif">평균</text>
+
+                    </svg>
+                  </div>
+                  <!-- /도넛형 원형 차트 -->
+
+                  <!-- 과목별 범례 리스트 -->
+                  <ul class="ak5_legend_list">
+                    <li class="ak5_legend_item">
+                      <span class="ak5_legend_dot" style="background:#2ecc8b;"></span>
+                      <span class="ak5_legend_subject">생활과 윤리</span>
+                      <span class="ak5_legend_score">0점</span>
+                    </li>
+                    <li class="ak5_legend_item">
+                      <span class="ak5_legend_dot" style="background:#4ec3e0;"></span>
+                      <span class="ak5_legend_subject">사회</span>
+                      <span class="ak5_legend_score">100점</span>
+                    </li>
+                    <li class="ak5_legend_item">
+                      <span class="ak5_legend_dot" style="background:#0321ff;"></span>
+                      <span class="ak5_legend_subject">한국사</span>
+                      <span class="ak5_legend_score">85점</span>
+                    </li>
+                    <li class="ak5_legend_item">
+                      <span class="ak5_legend_dot" style="background:#ff8c42;"></span>
+                      <span class="ak5_legend_subject">윤리와 사상</span>
+                      <span class="ak5_legend_score">72점</span>
+                    </li>
+                  </ul>
+                  <!-- /범례 리스트 -->
+
+                </div>
+              </div>
+              <!-- /오른쪽 영역 -->
+
+            </div>
+            <!-- /두 컬럼 레이아웃 -->
+
+          </div>
+          <!-- /IB Report -->
+
+          <!-- ───────────────────────────────────
+               My Report 뷰
+          ─────────────────────────────────── -->
+          <div class="ak5_view" id="ak5View_my">
+
+            <!-- 두 컬럼 레이아웃 (왼쪽 70% / 오른쪽 30%) -->
+            <div class="ak5_two_col">
+
+              <!-- 왼쪽 영역 (70%): 2×2 리포트 카드 그리드 -->
+              <div class="ak5_col_left">
+                <div class="ak5_card_grid">
+
+                  <!-- ── 리포트 카드 1: 창의적 글쓰기 ── -->
+                  <div class="ak5_report_card">
+                    <div class="ak5_card_top">
+                      <p class="ak5_card_date">2026-01-15</p>
+                      <h3 class="ak5_card_title">10년 후의 나의 모습을 상상한다면</h3>
+                      <span class="ak5_card_chip ak5_chip--teal">창의적 글쓰기</span>
+                    </div>
+                    <div class="ak5_card_score_row">
+                      <img src="resource/imgs_new/amazing.png" alt="Amazing" class="ak5_score_img_badge" />
+                      <span class="ak5_card_score_label">점수</span>
+                      <div class="ak5_card_score_right">
+                        <span class="ak5_card_score_value">90점</span>
+                      </div>
+                    </div>
+                    <div class="ak5_card_bottom">
+                      <p class="ak5_card_toefl"><span class="ak5_toefl_label">TOEFL</span> 710&nbsp;&nbsp;<span class="ak5_toefl_label">CEFR</span> B1</p>
+                      <div class="ak5_card_cta_row">
+                        <button class="ak5_cta_btn" data-type="ucc" aria-label="UCC 영상 보기">
+                          <img src="resource/imgs_new/UCC.png" alt="UCC 영상" class="ak5_cta_icon" />
+                          <span>UCC 영상</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback1" aria-label="1차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback1.png" alt="1차 첨삭" class="ak5_cta_icon" />
+                          <span>1차 첨삭</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback2" aria-label="2차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback2.png" alt="2차 첨삭" class="ak5_cta_icon" />
+                          <span>2차 첨삭</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /리포트 카드 1 -->
+
+                  <!-- ── 리포트 카드 2: My Writing ── -->
+                  <div class="ak5_report_card">
+                    <div class="ak5_card_top">
+                      <p class="ak5_card_date">2026-02-20</p>
+                      <h3 class="ak5_card_title">내가 가장 좋아하는 계절은 무엇인가</h3>
+                      <span class="ak5_card_chip ak5_chip--blue">지구과학</span>
+                    </div>
+                    <div class="ak5_card_score_row">
+                      <img src="resource/imgs_new/good job.png" alt="Good Job" class="ak5_score_img_badge" />
+                      <span class="ak5_card_score_label">점수</span>
+                      <div class="ak5_card_score_right">
+                        <span class="ak5_card_score_value">78점</span>
+                      </div>
+                    </div>
+                    <div class="ak5_card_bottom">
+                      <p class="ak5_card_toefl"><span class="ak5_toefl_label">TOEFL</span> 680&nbsp;&nbsp;<span class="ak5_toefl_label">CEFR</span> B1</p>
+                      <div class="ak5_card_cta_row">
+                        <button class="ak5_cta_btn" data-type="ucc" aria-label="UCC 영상 보기">
+                          <img src="resource/imgs_new/UCC.png" alt="UCC 영상" class="ak5_cta_icon" />
+                          <span>UCC 영상</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback1" aria-label="1차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback1.png" alt="1차 첨삭" class="ak5_cta_icon" />
+                          <span>1차 첨삭</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback2" aria-label="2차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback2.png" alt="2차 첨삭" class="ak5_cta_icon" />
+                          <span>2차 첨삭</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /리포트 카드 2 -->
+
+                  <!-- ── 리포트 카드 3: My Writing ── -->
+                  <div class="ak5_report_card">
+                    <div class="ak5_card_top">
+                      <p class="ak5_card_date">2026-03-10</p>
+                      <h3 class="ak5_card_title">디지털 기기가 학습에 미치는 영향</h3>
+                      <span class="ak5_card_chip ak5_chip--gray">생활과 윤리</span>
+                    </div>
+                    <div class="ak5_card_score_row">
+                      <span class="ak5_card_score_label">점수</span>
+                      <div class="ak5_card_score_right">
+                        <span class="ak5_card_score_value">0점</span>
+                      </div>
+                    </div>
+                    <div class="ak5_card_bottom">
+                      <p class="ak5_card_toefl"><span class="ak5_toefl_label">TOEFL</span> 650&nbsp;&nbsp;<span class="ak5_toefl_label">CEFR</span> A2</p>
+                      <div class="ak5_card_cta_row">
+                        <button class="ak5_cta_btn" data-type="ucc" aria-label="UCC 영상 보기">
+                          <img src="resource/imgs_new/UCC.png" alt="UCC 영상" class="ak5_cta_icon" />
+                          <span>UCC 영상</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback1" aria-label="1차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback1.png" alt="1차 첨삭" class="ak5_cta_icon" />
+                          <span>1차 첨삭</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback2" aria-label="2차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback2.png" alt="2차 첨삭" class="ak5_cta_icon" />
+                          <span>2차 첨삭</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /리포트 카드 3 -->
+
+                  <!-- ── 리포트 카드 4: My Writing ── -->
+                  <div class="ak5_report_card">
+                    <div class="ak5_card_top">
+                      <p class="ak5_card_date">2026-04-01</p>
+                      <h3 class="ak5_card_title">지구 온난화를 막기 위해 내가 실천할 수 있는 방법</h3>
+                      <span class="ak5_card_chip ak5_chip--orange">환경</span>
+                    </div>
+                    <div class="ak5_card_score_row">
+                      <span class="ak5_card_score_label">점수</span>
+                      <div class="ak5_card_score_right">
+                        <span class="ak5_card_score_value">55점</span>
+                      </div>
+                    </div>
+                    <div class="ak5_card_bottom">
+                      <p class="ak5_card_toefl"><span class="ak5_toefl_label">TOEFL</span> 660&nbsp;&nbsp;<span class="ak5_toefl_label">CEFR</span> A2-B1</p>
+                      <div class="ak5_card_cta_row">
+                        <button class="ak5_cta_btn" data-type="ucc" aria-label="UCC 영상 보기">
+                          <img src="resource/imgs_new/UCC.png" alt="UCC 영상" class="ak5_cta_icon" />
+                          <span>UCC 영상</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback1" aria-label="1차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback1.png" alt="1차 첨삭" class="ak5_cta_icon" />
+                          <span>1차 첨삭</span>
+                        </button>
+                        <button class="ak5_cta_btn" data-type="feedback2" aria-label="2차 첨삭 보기">
+                          <img src="resource/imgs_new/feedback2.png" alt="2차 첨삭" class="ak5_cta_icon" />
+                          <span>2차 첨삭</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /리포트 카드 4 -->
+
+                </div>
+              </div>
+              <!-- /왼쪽 영역 -->
+
+              <!-- 오른쪽 영역 (30%): 과목별 평균 점수 카드 -->
+              <div class="ak5_col_right">
+                <div class="ak5_score_card">
+
+                  <p class="ak5_score_card_title">과목별 평균 점수</p>
+
+                  <div class="ak5_donut_wrap">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="과목별 평균 점수 도넛 차트">
+
+                      <!-- 배경 트랙 원 -->
+                      <circle cx="100" cy="100" r="70"
+                        fill="none" stroke="#f0f0f0" stroke-width="16"/>
+
+                      <!-- 창의 생활 세그먼트 (민트) — 90/223×440=178 -->
+                      <circle cx="100" cy="100" r="70"
+                        fill="none" stroke="#2ecc8b" stroke-width="16"
+                        stroke-dasharray="178 440" stroke-linecap="butt"
+                        transform="rotate(-90, 100, 100)"/>
+
+                      <!-- 지구과학 세그먼트 (파랑) — 78/223×440=154, 시작 56° -->
+                      <circle cx="100" cy="100" r="70"
+                        fill="none" stroke="#4ec3e0" stroke-width="16"
+                        stroke-dasharray="154 440" stroke-linecap="butt"
+                        transform="rotate(56, 100, 100)"/>
+
+                      <!-- 환경 세그먼트 (주황) — 55/223×440=109, 시작 182° -->
+                      <circle cx="100" cy="100" r="70"
+                        fill="none" stroke="#ff8c42" stroke-width="16"
+                        stroke-dasharray="109 440" stroke-linecap="butt"
+                        transform="rotate(182, 100, 100)"/>
+
+                      <!-- 중앙 평균 점수 -->
+                      <text x="100" y="108"
+                        text-anchor="middle"
+                        font-size="30" font-weight="800"
+                        fill="#1a1a2e" font-family="sans-serif">56점</text>
+                      <text x="100" y="125"
+                        text-anchor="middle"
+                        font-size="12" fill="#888888" font-weight="500"
+                        font-family="sans-serif">평균</text>
+
+                    </svg>
+                  </div>
+
+                  <ul class="ak5_legend_list">
+                    <li class="ak5_legend_item">
+                      <span class="ak5_legend_dot" style="background:#2ecc8b;"></span>
+                      <span class="ak5_legend_subject">창의 생활</span>
+                      <span class="ak5_legend_score">90점</span>
+                    </li>
+                    <li class="ak5_legend_item">
+                      <span class="ak5_legend_dot" style="background:#4ec3e0;"></span>
+                      <span class="ak5_legend_subject">지구과학</span>
+                      <span class="ak5_legend_score">78점</span>
+                    </li>
+                    <li class="ak5_legend_item">
+                      <span class="ak5_legend_dot" style="background:#0321ff;"></span>
+                      <span class="ak5_legend_subject">생활과 윤리</span>
+                      <span class="ak5_legend_score">0점</span>
+                    </li>
+                    <li class="ak5_legend_item">
+                      <span class="ak5_legend_dot" style="background:#ff8c42;"></span>
+                      <span class="ak5_legend_subject">환경</span>
+                      <span class="ak5_legend_score">55점</span>
+                    </li>
+                  </ul>
+
+                </div>
+              </div>
+              <!-- /오른쪽 영역 -->
+
+            </div>
+            <!-- /두 컬럼 레이아웃 -->
+
+          </div>
+          <!-- /My Report 뷰 -->
+
+        </div>
+        <!-- /페이지 전체 래퍼 -->
+
+      </div>
+      <!-- /콘텐츠 배경 래퍼 -->
+
+    </div>
+
+    <!-- ── UCC 영상 모달 ── -->
+    <div class="ak5_modal_overlay" id="ak5UccModal" role="dialog" aria-modal="true" aria-labelledby="ak5UccModalTitle">
+      <div class="ak5_modal_box">
+
+        <!-- 모달 헤더: 과제명 + 닫기 버튼 -->
+        <div class="ak5_modal_header">
+          <p class="ak5_modal_label">UCC 영상</p>
+          <h2 class="ak5_modal_title" id="ak5UccModalTitle"></h2>
+          <button class="ak5_modal_close" id="ak5UccModalClose" aria-label="모달 닫기">&#215;</button>
+        </div>
+
+        <!-- 유튜브 영상 iframe (16:9 비율 유지) -->
+        <div class="ak5_modal_video_wrap">
+          <iframe
+            id="ak5UccIframe"
+            src=""
+            title="UCC 영상"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+    <!-- /UCC 영상 모달 -->
+
+    <!-- ── 1차 첨삭 모달 ── -->
+    <div class="ak5_modal_overlay" id="ak5Fb1Modal" role="dialog" aria-modal="true" aria-labelledby="ak5Fb1ModalTitle">
+      <div class="ak5_modal_box ak5_fb1_box">
+
+        <!-- 모달 헤더: 과제명 + 닫기 버튼 -->
+        <div class="ak5_modal_header">
+          <h2 class="ak5_modal_title" id="ak5Fb1ModalTitle"></h2>
+          <button class="ak5_modal_close" id="ak5Fb1ModalClose" aria-label="모달 닫기">&#215;</button>
+        </div>
+
+        <!-- 페이지 인디케이터 + 이전/다음 화살표 내비게이션 -->
+        <div class="ak5_fb1_nav">
+          <button class="ak5_fb1_arrow" id="ak5Fb1Prev" aria-label="이전 뷰">&#8592;</button>
+          <span class="ak5_fb1_indicator" id="ak5Fb1Indicator">1 / 2</span>
+          <button class="ak5_fb1_arrow" id="ak5Fb1Next" aria-label="다음 뷰">&#8594;</button>
+        </div>
+
+        <!-- 뷰 슬라이더 컨테이너 -->
+        <div class="ak5_fb1_viewport">
+
+          <!-- 뷰 1: My Writing / Corrections / Explanation -->
+          <div class="ak5_fb1_view ak5_fb1_view--active" id="ak5Fb1View_1">
+
+            <!-- 섹션 1: My Writing — 오류 인라인 하이라이트 (핑크) -->
+            <div class="ak5_fb1_section">
+              <p class="ak5_fb1_section_label">My Writing</p>
+              <p class="ak5_fb1_body_text">
+                In my opinion, 21st century world leadership should be based on wisdom rather than power.
+                Power-based leadership <span class="ak5_hl ak5_hl--err">focuses only on</span> force and control,
+                but wise leadership pursues cooperation and mutual understanding.
+                <span class="ak5_hl ak5_hl--err">First</span>, wise leaders listen to others and make decisions that benefit everyone.
+                <span class="ak5_hl ak5_hl--err">Second</span>, they use communication skills to resolve conflicts peacefully.
+                Therefore, I believe that a leader who leads with wisdom is more effective and
+                <span class="ak5_hl ak5_hl--err">trustworthy</span> in today's <span class="ak5_hl ak5_hl--err">complex world</span>.
+              </p>
+            </div>
+
+            <!-- 섹션 구분선 -->
+            <hr class="ak5_fb1_divider" />
+
+            <!-- 섹션 2: Corrections — 수정 후 텍스트, 변경 부분 그린 하이라이트 -->
+            <div class="ak5_fb1_section">
+              <p class="ak5_fb1_section_label">Corrections</p>
+              <p class="ak5_fb1_body_text">
+                In my opinion, 21st century world leadership should be based on wisdom rather than power.
+                Power-based leadership <span class="ak5_hl ak5_hl--fix">focuses solely on</span> force and control,
+                but wise leadership pursues cooperation and mutual understanding.
+                <span class="ak5_hl ak5_hl--fix">Furthermore</span>, wise leaders listen to others carefully and make decisions that benefit everyone.
+                <span class="ak5_hl ak5_hl--fix">In contrast</span>, they use communication skills to resolve conflicts peacefully.
+                Therefore, I believe that a leader who leads with wisdom is more effective and
+                <span class="ak5_hl ak5_hl--fix">reliable</span> in today's <span class="ak5_hl ak5_hl--fix">intricate world</span>.
+              </p>
+            </div>
+
+            <!-- 섹션 구분선 -->
+            <hr class="ak5_fb1_divider" />
+
+            <!-- 섹션 3: Explanation — 원본 → 수정 : 설명 -->
+            <div class="ak5_fb1_section">
+              <p class="ak5_fb1_section_label">Explanation</p>
+              <ul class="ak5_fb1_explain_list">
+                <li class="ak5_fb1_explain_item">
+                  <span class="ak5_hl ak5_hl--err">focuses only on</span>
+                  <span class="ak5_fb1_arrow">→</span>
+                  <span class="ak5_hl ak5_hl--fix">focuses solely on</span>
+                  <span class="ak5_fb1_colon"> : </span>
+                  <span class="ak5_fb1_explain_text">"only" 대신 "solely"를 사용하면 더 격식 있는 표현이 됩니다.</span>
+                </li>
+                <li class="ak5_fb1_explain_item">
+                  <span class="ak5_hl ak5_hl--err">First / Second</span>
+                  <span class="ak5_fb1_arrow">→</span>
+                  <span class="ak5_hl ak5_hl--fix">Furthermore / In contrast</span>
+                  <span class="ak5_fb1_colon"> : </span>
+                  <span class="ak5_fb1_explain_text">단순 나열 대신 비교·대조를 드러내는 연결어로 교체하면 비교문 구조가 명확해집니다.</span>
+                </li>
+                <li class="ak5_fb1_explain_item">
+                  <span class="ak5_hl ak5_hl--err">trustworthy</span>
+                  <span class="ak5_fb1_arrow">→</span>
+                  <span class="ak5_hl ak5_hl--fix">reliable</span>
+                  <span class="ak5_fb1_colon"> : </span>
+                  <span class="ak5_fb1_explain_text">문맥상 "reliable"이 리더십의 신뢰성을 더 직접적으로 표현합니다.</span>
+                </li>
+                <li class="ak5_fb1_explain_item">
+                  <span class="ak5_hl ak5_hl--err">complex world</span>
+                  <span class="ak5_fb1_arrow">→</span>
+                  <span class="ak5_hl ak5_hl--fix">intricate world</span>
+                  <span class="ak5_fb1_colon"> : </span>
+                  <span class="ak5_fb1_explain_text">"intricate"은 "complex"보다 어휘 수준이 높아 글의 다양성을 높여줍니다.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <!-- /뷰 1 -->
+
+          <!-- 뷰 2: 1차 Writing 최종 제출 결과물 -->
+          <div class="ak5_fb1_view" id="ak5Fb1View_2">
+            <div class="ak5_fb1_result_section">
+              <p class="ak5_fb1_section_label">1st Writing Submission</p>
+              <p class="ak5_fb1_result_text">
+                In my opinion, 21st century world leadership should be based on wisdom rather than power.
+                Power-based leadership focuses solely on force and control, but wise leadership pursues
+                cooperation and mutual understanding. Furthermore, wise leaders listen to others carefully
+                and make decisions that benefit everyone. In contrast, power-based leaders often ignore
+                the voices of others. Second, wise leaders use communication skills to resolve conflicts
+                peacefully. Therefore, I strongly believe that a leader who leads with wisdom is more
+                effective and trustworthy in today's complex world.
+              </p>
+            </div>
+          </div>
+          <!-- /뷰 2 -->
+
+        </div>
+        <!-- /뷰 슬라이더 컨테이너 -->
+
+      </div>
+    </div>
+    <!-- /1차 첨삭 모달 -->
+
+    <!-- ── 2차 첨삭 모달 ── -->
+    <div class="ak5_modal_overlay" id="ak5Fb2Modal" role="dialog" aria-modal="true" aria-labelledby="ak5Fb2ModalTitle">
+      <div class="ak5_modal_box ak5_fb1_box">
+
+        <!-- 모달 헤더: 과제명 + 닫기 버튼 -->
+        <div class="ak5_modal_header">
+          <h2 class="ak5_modal_title" id="ak5Fb2ModalTitle"></h2>
+          <button class="ak5_modal_close" id="ak5Fb2ModalClose" aria-label="모달 닫기">&#215;</button>
+        </div>
+
+        <!-- 페이지 인디케이터 + 이전/다음 화살표 내비게이션 -->
+        <div class="ak5_fb1_nav">
+          <button class="ak5_fb1_arrow" id="ak5Fb2Prev" aria-label="이전 뷰">&#8592;</button>
+          <span class="ak5_fb1_indicator" id="ak5Fb2Indicator">1 / 2</span>
+          <button class="ak5_fb1_arrow" id="ak5Fb2Next" aria-label="다음 뷰">&#8594;</button>
+        </div>
+
+        <!-- 뷰 슬라이더 컨테이너 -->
+        <div class="ak5_fb1_viewport">
+
+          <!-- 뷰 1: 2차 AI 피드백 — My Writing / Corrections / Explanation -->
+          <div class="ak5_fb1_view ak5_fb1_view--active" id="ak5Fb2View_1">
+
+            <!-- 섹션 1: My Writing — 1차 결과물에 남은 오류 하이라이트 (핑크) -->
+            <div class="ak5_fb1_section">
+              <p class="ak5_fb1_section_label">My Writing</p>
+              <p class="ak5_fb1_body_text">
+                In my opinion, 21st century world leadership should be based on wisdom rather than power.
+                Power-based leadership focuses solely on force and control, but wise leadership pursues
+                cooperation and mutual understanding. Furthermore, wise leaders listen to others carefully
+                and <span class="ak5_hl ak5_hl--err">make decisions that benefit everyone</span>.
+                In contrast, power-based leaders often ignore the voices of others.
+                <span class="ak5_hl ak5_hl--err">Second</span>, they use communication skills to resolve conflicts peacefully.
+                Therefore, I <span class="ak5_hl ak5_hl--err">strongly believe</span> that a leader who leads with wisdom
+                is more effective and reliable in today's intricate world.
+              </p>
+            </div>
+
+            <!-- 섹션 구분선 -->
+            <hr class="ak5_fb1_divider" />
+
+            <!-- 섹션 2: Corrections — 수정 후 텍스트, 변경 부분 그린 하이라이트 -->
+            <div class="ak5_fb1_section">
+              <p class="ak5_fb1_section_label">Corrections</p>
+              <p class="ak5_fb1_body_text">
+                In my opinion, 21st century world leadership should be based on wisdom rather than power.
+                Power-based leadership focuses solely on force and control, but wise leadership pursues
+                cooperation and mutual understanding. Furthermore, wise leaders listen to others carefully
+                and <span class="ak5_hl ak5_hl--fix">make decisions that are beneficial to all</span>.
+                In contrast, power-based leaders often ignore the voices of others.
+                <span class="ak5_hl ak5_hl--fix">Additionally</span>, they use communication skills to resolve conflicts peacefully.
+                Therefore, I <span class="ak5_hl ak5_hl--fix">firmly believe</span> that a leader who leads with wisdom
+                is more effective and reliable in today's intricate world.
+              </p>
+            </div>
+
+            <!-- 섹션 구분선 -->
+            <hr class="ak5_fb1_divider" />
+
+            <!-- 섹션 3: Explanation — 원본 → 수정 : 설명 -->
+            <div class="ak5_fb1_section">
+              <p class="ak5_fb1_section_label">Explanation</p>
+              <ul class="ak5_fb1_explain_list">
+                <li class="ak5_fb1_explain_item">
+                  <span class="ak5_hl ak5_hl--err">make decisions that benefit everyone</span>
+                  <span class="ak5_fb1_arrow">→</span>
+                  <span class="ak5_hl ak5_hl--fix">make decisions that are beneficial to all</span>
+                  <span class="ak5_fb1_colon"> : </span>
+                </li>
+                <li class="ak5_fb1_explain_item">
+                  <span class="ak5_hl ak5_hl--err">Second</span>
+                  <span class="ak5_fb1_arrow">→</span>
+                  <span class="ak5_hl ak5_hl--fix">Additionally</span>
+                  <span class="ak5_fb1_colon"> : </span>
+                  <span class="ak5_fb1_explain_text">앞 문장이 이미 대조(In contrast)로 시작했으므로, 추가 논점은 "Additionally"로 이어가는 것이 자연스럽습니다.</span>
+                </li>
+                <li class="ak5_fb1_explain_item">
+                  <span class="ak5_hl ak5_hl--err">strongly believe</span>
+                  <span class="ak5_fb1_arrow">→</span>
+                  <span class="ak5_hl ak5_hl--fix">firmly believe</span>
+                  <span class="ak5_fb1_colon"> : </span>
+                  <span class="ak5_fb1_explain_text">"firmly"는 "strongly"보다 격식체 글쓰기에 더 적합한 표현입니다.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <!-- /뷰 1 -->
+
+          <!-- 뷰 2: 최종 Writing 결과물 -->
+          <div class="ak5_fb1_view" id="ak5Fb2View_2">
+            <div class="ak5_fb1_result_section">
+              <p class="ak5_fb1_section_label">Final Writing Submission</p>
+              <p class="ak5_fb1_result_text">
+                In my opinion, 21st century world leadership should be based on wisdom rather than power.
+                Power-based leadership focuses solely on force and control, but wise leadership pursues
+                cooperation and mutual understanding. Furthermore, wise leaders listen to others carefully
+                and make decisions that are beneficial to all. In contrast, power-based leaders often
+                ignore the voices of others. Additionally, wise leaders use communication skills to resolve
+                conflicts peacefully. Therefore, I firmly believe that a leader who leads with wisdom is
+                more effective and reliable in today's intricate world.
+              </p>
+            </div>
+          </div>
+          <!-- /뷰 2 -->
+
+        </div>
+        <!-- /뷰 슬라이더 컨테이너 -->
+
+      </div>
+    </div>
+    <!-- /2차 첨삭 모달 -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="resource/js/common.js"></script>
+    <script src="resource/js/common5.js"></script>
+  </body>
+</html>
