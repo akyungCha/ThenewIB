@@ -1,0 +1,28 @@
+/* CSS Document */
+html, body{height:100%;}
+body{background-color: #FFFFFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button{margin:0; padding:0; *margin:0; *padding:0; border:0; *border:0;}
+body,div,h1,h2,h3,h4,h5,th,td,input,p,select,button,ul,li,textarea{color: #3a3a3a; font-family:'Pretendard', AppleSDGothicNeo-Regular,'맑은 고딕','Malgun Gothic',나눔고딕,돋움,Dotum,굴림,Gulim,'Apple SD Gothic Neo',sans-serif, verdana; letter-spacing:-0.03em; box-sizing: border-box;}
+input:focus {outline: none;}
+input[type=password]{font-family: 'Noto Sans KR', AppleSDGothicNeo-Regular,'맑은 고딕','Malgun Gothic',나눔고딕,돋움,Dotum,굴림,Gulim,'Apple SD Gothic Neo',sans-serif, verdana;}
+input[type=button]{cursor: pointer;}
+body,th,td,input,select{font-size:14px; font-weight:normal; }
+img{border:0 none; vertical-align:middle;}
+form, fieldset {border:0 none;}
+table{border-collapse:collapse; border-spacing:0;}
+address, caption, em {font-weight:normal; font-style:normal;}
+ul,ol,li{list-style:none; overflow: hidden;}
+ol,li{float:left;}
+img,input,select,textarea{vertical-align:middle;}
+textarea {resize: none;}
+textarea::placeholder {color: #bfbfbf;}
+textarea:focus {outline: none;}
+acronym, abbr {cursor:help; letter-spacing:-0.05em; border-bottom:1px dotted #000; /* fix opera bug */}
+.skip, .hide {position:absolute; width:0; height:0; font-size:0; overflow:hidden; visibility:hidden;}
+.clear{clear:both;}
+button{ cursor: pointer; background: none; -webkit-appearance: none; /* 네이티브 외형 감추기 */ -moz-appearance: none; appearance: none;}
+
+/* anchor */
+a{cursor: pointer; color:#202020; text-decoration:none;}
+a:link {}
+a:visited {color:#202020;}
