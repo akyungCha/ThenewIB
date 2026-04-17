@@ -1,0 +1,564 @@
+/* style.ak.css — 2-2_IB_research(260402) 전용 스타일 */
+
+.learning_content {
+  background-color: unset;
+  background: linear-gradient(111deg, #141855 0.41%, #1A237E 20.91%, #1D688D 39.99%, #1F8A95 66.07%, #1D5F8C 87.91%, #1A237E 99.59%, #1F9C99 99.59%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 모바일네비 숨김 */
+.m_nav {
+  display: none !important;
+}
+
+/* 좌측 네비 — 오프스크린 기본, 오버레이로 열림 */
+.nav {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: 100%;
+  z-index: 200;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.25);
+  transition: left 0.3s ease;
+}
+
+.nav.open {
+  left: 0;
+}
+
+/* 백드롭 */
+.ak_backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 199;
+}
+
+.ak_backdrop.open {
+  display: block;
+}
+
+/* 햄버거 버튼 래퍼 */
+.ak_topbar {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 201;
+  display: flex;
+  align-items: center;
+}
+
+/* 로고 + 텍스트 래퍼 — 네비(z-index:200) 아래에 배치 */
+.ak_topbar_info {
+  position: fixed;
+  top: 15px;
+  left: 62px; /* 14px(topbar left) + 36px(햄버거) + 12px(gap) */
+  z-index: 198;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ak_topbar_logo {
+  height: clamp(28px, 2.5vw, 42px);
+  width: auto;
+}
+
+.ak_topbar_divider {
+  display: inline-block;
+  margin-bottom: 50;
+  width: 1px;
+  gap: 10px;
+  height: clamp(5px, 2.5vw, 10px);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.ak_topbar_txt {
+  color: #fff;
+  font-size: clamp(28px, 2.5vw, 42px);
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* 햄버거 버튼 */
+.ak_hamburger {
+  position: static;
+  z-index: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ak_hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+/* 열렸을 때 X 모양 */
+.ak_hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.ak_hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.ak_hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 좌우 박스 레이아웃 */
+.ak_box_wrap {
+  display: flex;
+  gap: 20px;
+  padding: 70px 30px 30px;
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 0;
+}
+
+.ak_box {
+  flex: 1;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.70);
+}
+
+/* 왼쪽 박스 — quiz_ex.png 배경 위에 그리드 */
+.ak_box_left {
+  position: relative;
+  background: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ak_box_bg_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.ak_box_left::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.70);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+/* 2x3 포스트 그리드 — 배경·오버레이 위 */
+.ak_post_grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: clamp(6px, 1vw, 16px);
+  padding: clamp(12px, 2vw, 24px);
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.ak_note_guide {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #9ca3af;
+  font-size: 20px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.ak_note_item {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.ak_note_item.ak_note_done {
+  cursor: default;
+}
+
+.ak_note_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.ak_note_text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  max-height: 80%;
+  text-align: center;
+  font-size: clamp(18px, 0.75vw, 20px);
+  color: #3a3a3a;
+  font-weight: 500;
+  line-height: 1.4;
+  word-break: break-word;
+  pointer-events: none;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+/* 노트 확대 오버레이 */
+.ak_note_overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 10000;
+}
+
+.ak_note_overlay.active {
+  display: block;
+}
+
+/* 직접 만든 모달 */
+.ak_note_modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10001;
+  width: clamp(1000px, 32vw, 1200px);
+  aspect-ratio: 2 / 1;
+  background: linear-gradient(-135deg, transparent 32px, #f5eb7e 32px);
+  border-radius: 3px 3px 0 3px;
+  box-shadow: 4px 8px 28px rgba(0, 0, 0, 0.35);
+  padding: clamp(28px, 4vw, 44px);
+  box-sizing: border-box;
+}
+
+.ak_note_modal::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 32px solid transparent;
+  border-bottom: 32px solid rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.ak_note_modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ak_note_modal_input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: clamp(30px, 1.6vw, 32px);
+  color: #3a3a3a;
+  font-weight: 500;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.6;
+  padding: 20% 0 0 0;
+  box-sizing: border-box;
+}
+
+/* 오른쪽 박스 내부 */
+.ak_box_right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 0.6vw, 20px);
+  box-sizing: border-box;
+}
+
+/* 상단 정보 박스 */
+.ak_info_box {
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 10px;
+  padding: clamp(14px, 1.6vw, 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ak_task_text {
+  font-size: clamp(25px, 1.82vw, 35px);
+  font-weight: 700;
+  line-height: 1.7;
+  color: #1a1a2e;
+}
+
+.ak_checklist {
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  list-style-type: decimal !important;
+}
+
+.ak_checklist li {
+  font-size: clamp(20px, 1.82vw, 30px);
+  color: #2a2a2a;
+  line-height: 1.3;
+  list-style-type: decimal !important;
+  overflow: visible;
+  float: none;
+}
+
+/* 답변 영역 */
+.ak_question_area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(14px, 1.6vw, 20px);
+  gap: 8px;
+  min-height: 0;
+}
+
+.ak_question_label {
+  font-size: clamp(20px, 1.82vw, 30px);
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.ak_answer_wrap {
+  position: relative;
+  width: 100%;
+}
+
+.ak_send_icon {
+  position: absolute;
+  padding: 0px 15px 8px;
+transform: scale(1.7);
+  bottom: 8px;
+  right: 8px;
+  cursor: pointer;
+  pointer-events: all;
+  display: block;
+  z-index: 1;
+}
+
+.ak_send_icon_path {
+  transition: fill 0.3s ease;
+}
+
+.ak_answer_input {
+  width: 100%;
+  max-height: 70px;
+  min-height: 50px;
+  padding: 20px 20px 5px;
+  border: 1.5px solid rgba(26, 35, 126, 0.22);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  font-size: clamp(20px, 1.1vw, 25px);
+  color: #1a1a2e;
+  resize: none;
+  box-sizing: border-box;
+  outline: none;
+  line-height: 1.0;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.ak_answer_input:focus {
+  border-color: rgba(26, 35, 126, 0.5);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.ak_answer_input::placeholder {
+  color: #b8b8c8;
+}
+
+/* 진행 바 */
+.ak_progress_wrap {
+  margin-bottom: clamp(2px, 0.4vw, 4px);
+  margin-top: clamp(4px, 0.7vw, 6px);
+  background: #ffffff;
+  padding: clamp(2px, 0.4vw, 5px);
+  flex-shrink: 0;
+}
+
+.ak_progress_bar {
+  display: flex;
+  gap: clamp(2px, 0.3vw, 3px);
+  width: 100%;
+  height: clamp(50px, 1.5vw, 70px);
+}
+
+.ak_progress_seg {
+  flex: 1;
+  height: 100%;
+  background: #b1f1ed;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.ak_progress_seg_filled {
+  background: #0dd1c4;
+}
+
+/* 하단 버튼 */
+.ak_box_footer {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 0 calc(clamp(14px, 1.6vw, 20px) + clamp(2px, 0.4vw, 5px));
+  box-sizing: border-box;
+}
+
+.ak_send_btn {
+  padding-left: 10px;
+  height: 25px;
+  width: auto;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.ak_help_btn {
+  display: block;
+  padding: clamp(10px, 1.1vw, 18px);
+  width: 100%;
+  border-radius: 50px;
+  background: #141855;
+  box-shadow: 2.095px 2.095px 6.284px 4.189px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: clamp(22px, 1.2vw, 28px);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.6px;
+  text-align: center;
+}
+
+.ak_help_btn:hover {
+  background: #283593;
+}
+
+.ak_help_btn.ak_help_btn--back {
+  background: #FF871D;
+}
+.ak_help_btn.ak_help_btn--back:hover {
+  background: #faaf4c;
+}
+
+/* 통계 뷰 활성 시 — 배경 이미지·오버레이 숨김, 흰 배경으로 교체 */
+.ak_box_left.ak_stats_active {
+  background: #ffffff;
+}
+.ak_box_left.ak_stats_active::after {
+  display: none;
+}
+.ak_box_left.ak_stats_active .ak_box_bg_img {
+  display: none;
+}
+
+/* 통계 뷰 */
+.ak_stats_view {
+  display: none;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-height: 0;
+  padding: clamp(12px, 2vw, 24px);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.ak_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(6px, 0.8vw, 12px);
+  height: 100%;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.ak_stat_card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: clamp(10px, 1.2vw, 18px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.ak_stat_card--teal   { background: #08ac9e; color: #fff; }
+.ak_stat_card--blue   { background: #5c6bc0; color: #fff; }
+.ak_stat_card--teal2  { background: #f5a243; color: #fff; }
+.ak_stat_card--coral  { background: #ef5350; color: #fff; }
+.ak_stat_card--purple { background: #7e57c2; color: #fff; }
+.ak_stat_card--navy   { background: #1a237e; color: #fff; }
+.ak_stat_card--green  { background: #03b2b8; color: #fff; }
+
+.ak_stat_pct {
+  opacity: 0.55;
+  padding-top: 20px;
+  font-size: clamp(30px, 1.8vw, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ak_stat_label {
+  padding-top: 5px;
+  font-size: clamp(25px, 1.2vw, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ak_stat_card:not([class*="ak_stat_card--"]) .ak_stat_label {
+  color: #1a237e;
+}
+
+.ak_stat_preview {
+  font-size: clamp(12px, 1.5vw, 18px);
+  line-height: 1.2;
+  padding-top: 5px;
+  margin: 0;
+  color: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ak_stat_card:not([class*="ak_stat_card--"]) .ak_stat_preview {
+  color: #555;
+}

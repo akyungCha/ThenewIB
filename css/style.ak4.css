@@ -1,0 +1,484 @@
+/* =============================================
+   IB Writing 페이지 스타일
+============================================= */
+
+html, body {
+  height: 100%;
+}
+
+/* ─────────────────────────────────────────
+   왼쪽 패널 (50%)
+───────────────────────────────────────── */
+.ak4_left {
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+/* ─────────────────────────────────────────
+   1. 질문 박스
+───────────────────────────────────────── */
+.ak4_question_box {
+  background: rgb(255, 255, 255);
+  border-radius: 14px;
+  padding: 0;         
+  display: flex;
+  flex-direction: column;
+  gap: 0;             
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;   
+}
+
+.ak4_question_text {
+  font-size: clamp(18px, 1vw, 20px);
+  font-weight: 600;
+  color: #1a1a2e;
+  line-height: 1.65;
+  font-family: sans-serif;
+  background-color: #F7F3EE;
+  padding: 20px 34px;  
+  margin: 0;
+}
+
+.ak4_chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 24px;
+}
+
+.ak4_chip {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: #F7F3EE;
+  color: #000000;
+  font-size: clamp(8px, 1.1vw, 13px);
+  font-weight: 500;
+  font-family: sans-serif;
+  border: 1px solid #C6CAD3;
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────
+   2. IB Writing 에디터 박스
+───────────────────────────────────────── */
+.ak4_editor_box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 9px;
+  overflow: hidden;
+  min-height: 0;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 헤더 바 */
+.ak4_editor_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 20px;
+  background: #20B1A0;
+  flex-shrink: 0;
+}
+
+.ak4_editor_header_left,
+.ak4_editor_header_right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ak4_editor_header_center {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 700;
+  font-family: sans-serif;
+  letter-spacing: 0.02em;
+  transform: translateX(-30px);
+}
+
+.ak4_header_icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: opacity 0.18s;
+}
+
+/* 연필 아이콘  */
+.ak4_header_icon--pencil {
+  width: 30px;
+  height: 30px;
+}
+
+.ak4_header_icon:hover {
+  opacity: 0.75;
+}
+
+/* 글쓰기 */
+.ak4_editor_textarea {
+  flex: 1;
+  width: 100%;
+  padding: 22px 26px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: clamp(15px, 1vw, 18px);
+  color: #1a1a2e;
+  line-height: 1.8;
+  font-family: sans-serif;
+  background: #ffffff;
+  box-sizing: border-box;
+  min-height: 0;
+  text-align: center;
+  padding-top: 25%;  
+}
+
+.ak4_editor_textarea::placeholder {
+  color: #c8c8c8;
+  font-size: clamp(22px, 1vw, 2px);
+
+}
+
+/* 하단 바 */
+.ak4_editor_footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+/* 자동 첨삭 버튼 */
+.ak4_submit_btn {
+  padding: 10px 36px;
+  background: #FF871D;
+  box-shadow: 1.257px 1.257px 3.77px 2.514px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: sans-serif;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.ak4_submit_btn:hover {
+  background: #db7114;
+}
+
+/* Word Count */
+.ak4_word_count {
+  position: absolute;
+  right: 22px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000000;
+  font-family: sans-serif;
+}
+
+
+/* =============================================
+   오른쪽 영역
+============================================= */
+.ak4_right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+/* ─────────────────────────────────────────
+   Voice Dictionary 박스
+───────────────────────────────────────── */
+.ak4_vd_box {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(8px, 1vw, 16px);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  border: 2px solid rgb(255, 255, 255);
+  padding: 0;
+  overflow: hidden;
+  flex-shrink: 1;
+  min-height: 0;
+}
+
+/* 왼쪽: 마이크 아이콘 + 텍스트 */
+.ak4_vd_icon_wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(3px, 0.4vw, 6px);
+  flex-shrink: 0;
+  background: #F7F3EE;
+  border-radius: 10px 0px 0px 10px;
+  padding: clamp(22px, 2vw, 30px) clamp(8px, 1vw, 14px);
+}
+
+.ak4_vd_icon {
+  width: clamp(26px, 3.2vw, 50px);
+  height: clamp(26px, 3.2vw, 50px);
+  object-fit: contain;
+}
+
+.ak4_vd_label {
+  font-size: clamp(10px, 1.1vw, 17px);
+  font-weight: 600;
+  color: #000000;
+  font-family: sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+/* 오른쪽: 입력 + 출력 */
+.ak4_vd_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ak4_vd_fields {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(7px, 0.8vw, 12px);
+  padding: clamp(6px, 0.7vw, 10px);
+  flex: 1;
+  margin-top: clamp(5px, 0.7vw, 10px);
+  margin-left: -10px;
+}
+
+/* 입력 필드 래퍼 */
+.ak4_vd_input_wrap {
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 0.5vw, 8px);
+  background: rgba(255, 254, 254, 0.92);
+  border-radius: 100px;
+  padding: clamp(5px, 0.5vw, 8px) clamp(8px, 1vw, 14px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  height: clamp(40px, 3.5vw, 56px); 
+  box-sizing: border-box;           
+}
+
+.ak4_vd_lang_icon {
+  width: clamp(20px, 2.2vw, 32px);
+  height: clamp(20px, 2.2vw, 32px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.ak4_vd_input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: clamp(11px, 1.2vw, 17px);
+  color: #1a1a2e;
+  font-family: sans-serif;
+  min-width: 0;
+  margin-left: clamp(4px, 0.6vw, 10px);
+}
+
+.ak4_vd_input::placeholder {
+  color: #b0b8c8;
+}
+
+/* 파형  */
+.ak4_vd_waveform {
+  display: none;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 24px;
+}
+
+.ak4_vd_waveform.ak4_waveform--active {
+  display: flex;
+}
+
+/* 파형 바 */
+@keyframes ak4_wave {
+  0%, 100% { transform: scaleY(0.2); }
+  50%       { transform: scaleY(1);   }
+}
+
+.ak4_wave_bar {
+  width: 3px;
+  height: 18px;
+  border-radius: 2px;
+  background: #20B1A0;
+  transform-origin: center;
+  transform: scaleY(0.2);
+  animation: ak4_wave 1s ease-in-out infinite;
+}
+
+.ak4_wave_bar:nth-child(1)  { animation-delay: 0s;     }
+.ak4_wave_bar:nth-child(2)  { animation-delay: 0.04s;  }
+.ak4_wave_bar:nth-child(3)  { animation-delay: 0.08s;  }
+.ak4_wave_bar:nth-child(4)  { animation-delay: 0.12s;  }
+.ak4_wave_bar:nth-child(5)  { animation-delay: 0.16s;  }
+.ak4_wave_bar:nth-child(6)  { animation-delay: 0.20s;  }
+.ak4_wave_bar:nth-child(7)  { animation-delay: 0.24s;  }
+.ak4_wave_bar:nth-child(8)  { animation-delay: 0.28s;  }
+.ak4_wave_bar:nth-child(9)  { animation-delay: 0.32s;  }
+.ak4_wave_bar:nth-child(10) { animation-delay: 0.36s;  }
+.ak4_wave_bar:nth-child(11) { animation-delay: 0.40s;  }
+.ak4_wave_bar:nth-child(12) { animation-delay: 0.44s;  }
+.ak4_wave_bar:nth-child(13) { animation-delay: 0.48s;  }
+.ak4_wave_bar:nth-child(14) { animation-delay: 0.44s;  }
+.ak4_wave_bar:nth-child(15) { animation-delay: 0.40s;  }
+.ak4_wave_bar:nth-child(16) { animation-delay: 0.36s;  }
+.ak4_wave_bar:nth-child(17) { animation-delay: 0.32s;  }
+.ak4_wave_bar:nth-child(18) { animation-delay: 0.28s;  }
+.ak4_wave_bar:nth-child(19) { animation-delay: 0.24s;  }
+.ak4_wave_bar:nth-child(20) { animation-delay: 0.20s;  }
+.ak4_wave_bar:nth-child(21) { animation-delay: 0.16s;  }
+.ak4_wave_bar:nth-child(22) { animation-delay: 0.12s;  }
+.ak4_wave_bar:nth-child(23) { animation-delay: 0.08s;  }
+.ak4_wave_bar:nth-child(24) { animation-delay: 0.04s;  }
+
+/* 마이크 아이콘 */
+.ak4_vd_mic_icon {
+  width: clamp(18px, 2vw, 30px);
+  height: clamp(18px, 2vw, 30px);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+/* 활성 시 teal 틴트 */
+.ak4_vd_mic_icon--active {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(60%) saturate(600%) hue-rotate(130deg) brightness(95%);
+}
+
+/* 전송 버튼 */
+.ak4_vd_send_btn {
+  width: clamp(24px, 2.6vw, 40px);
+  height: clamp(24px, 2.6vw, 40px);
+  object-fit: contain;
+  flex-shrink: 0;
+  cursor: pointer;
+  filter: grayscale(1) opacity(0.35);
+  transition: filter 0.2s ease;
+}
+
+/* 입력값 있을 때 주황색 */
+.ak4_vd_send_btn--active {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(80%) saturate(800%) hue-rotate(340deg) brightness(105%);
+}
+
+/* ─────────────────────────────────────────
+   탭 컨텐츠 박스
+───────────────────────────────────────── */
+.ak4_tab_box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* 탭 헤더 행 */
+.ak4_tab_header {
+  flex-shrink: 0;
+}
+
+/* 탭 버튼 공통 */
+.ak4_tab_btn {
+  flex: 1;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  font-size: clamp(13px, 1.5vw, 23px);
+  font-weight: 700;
+  font-family: sans-serif;
+  letter-spacing: 0.01em;
+  transition: background 0.18s, color 0.18s, opacity 0.18s;
+}
+
+/* ── Guided Writing 탭 ── */
+/* 비활성 */
+.ak4_tab_btn[data-tab="guided"] {
+  background: #ffffff;
+  padding: clamp(8px, 0.9vw, 13px) clamp(10px, 1.4vw, 20px);
+  color: #9a9a9a;
+}
+/* 활성 */
+.ak4_tab_btn[data-tab="guided"].ak4_tab_btn--active {
+  padding: clamp(8px, 0.9vw, 13px) clamp(10px, 1.4vw, 20px);
+  box-shadow: 0 -3px 4px 0 rgba(0, 0, 0, 0.25) inset;
+  background: #ffffff;
+  color: #1a1a2e;
+}
+
+/* ── 첨삭 내용 탭 ── */
+/* 비활성 */
+.ak4_tab_btn[data-tab="checklist"] {
+  padding: clamp(8px, 0.9vw, 13px) clamp(20px, 3.5vw, 50px);
+  background: #e8a870;
+  color: #ffffff;
+}
+/* 활성 */
+.ak4_tab_btn[data-tab="checklist"].ak4_tab_btn--active {
+  background: #DD9250;
+  padding: clamp(8px, 0.9vw, 13px) clamp(20px, 3.5vw, 50px);
+  color: #ffffff;
+  box-shadow: 0 -3px 4px 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+/* 컨텐츠 영역 — 나머지 높이 채움 */
+.ak4_tab_content {
+  flex: 1;
+  border-radius: 0 10px 10px 10px;
+  border: 1.5px solid #FFF;
+  position: relative;
+  background: #ffffff;
+  min-height: 0;
+}
+
+/* 개별 패널 — 기본 숨김 */
+.ak4_tab_pane {
+  display: none;
+  position: absolute;
+  inset: 0;
+}
+
+/* 활성 패널 표시 */
+.ak4_tab_pane--active {
+  display: block;
+}
+
+/* 번역 출력 영역 */
+.ak4_vd_output {
+  height: clamp(40px, 3.5vw, 56px);
+  box-sizing: border-box;            
+  padding: clamp(5px, 0.5vw, 8px) clamp(8px, 1vw, 14px);
+  font-size: clamp(11px, 1.2vw, 17px);
+  color: #1a1a2e;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 0.5vw, 8px);
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 100px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
